@@ -58,14 +58,14 @@ app.post('/coffee',async(req,res)=>{
 // data base data post end 
 
 //DB Data Update start
-//Spacific Data catch {id} dia
+//Specific Data Read {id} kora put dia update
 app.get('/coffee/:id', async(req,res)=>{
   const id = req.params.id;
   const query = {_id: new ObjectId(id)}
   const result = await coffeeCollection.findOne(query);
   res.send(result);
 })
-//
+//Specific Data Read korar por {app.put} use kora data update korta hoba...
 app.put('/coffee/:id',async(req,res)=>{
   const id = req.params.id;
   const filter = {_id: new ObjectId(id)}
